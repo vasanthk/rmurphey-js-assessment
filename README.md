@@ -1,4 +1,5 @@
-# [Rebecca Murphey's JS Assessment](https://github.com/rmurphey/js-assessment) - My Solutions
+# [Rebecca Murphey's JS Assessment](https://github.com/rmurphey/js-assessment)
+# My Solutions
 
 You can clone or download this repo. Once you have done so, from the root
 directory of the repo, run:
