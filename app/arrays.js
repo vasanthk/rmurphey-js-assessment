@@ -16,11 +16,23 @@ exports.arraysAnswers = {
   },
 
   sum : function(arr) {
-
+    var sum = 0;
+    for(var i=0; i< arr.length; i++) {
+      sum +=arr[i];
+    }
+    return sum;
   },
 
   remove : function(arr, item) {
-
+    // This modifies the ORIGINAL array.
+    // If it is ok to use a new result array, use filter() then.
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i] === item) {
+        arr.splice(i, 1);
+        i--; // move index pointer back to removed item index.
+      }
+    }
+    return arr;
   },
 
   removeWithoutCopy : function(arr, item) {
