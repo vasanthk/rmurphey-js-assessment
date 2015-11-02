@@ -24,19 +24,23 @@ exports.arraysAnswers = {
   },
 
   remove : function(arr, item) {
-    // This modifies the ORIGINAL array.
+    // Returns a NEW ARRAY
+    return arr.filter(function(val) {
+      return val !== item;
+    });
+  },
+
+  removeWithoutCopy : function(arr, item) {
+    // Modifies the ORIGINAL array.
     // If it is ok to use a new result array, use filter() then.
     for(var i = 0; i < arr.length; i++) {
       if(arr[i] === item) {
         arr.splice(i, 1);
         i--; // move index pointer back to removed item index.
+        len--; // Decrease length of array.
       }
     }
     return arr;
-  },
-
-  removeWithoutCopy : function(arr, item) {
-
   },
 
   append : function(arr, item) {
