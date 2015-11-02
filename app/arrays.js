@@ -37,7 +37,6 @@ exports.arraysAnswers = {
       if(arr[i] === item) {
         arr.splice(i, 1);
         i--; // move index pointer back to removed item index.
-        len--; // Decrease length of array.
       }
     }
     return arr;
