@@ -93,21 +93,29 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
-    // TODO: Check if there is a better way - Maybe using filter() ?
-    var seen = {};
-    var dupes = [];
-
-    for (var i = 0; i < arr.length; i++) {
-      seen[arr[i]] = seen[arr[i]] ? seen[arr[i]] + 1 : 1;
-    }
-
-    for (var item in seen) {
-      if (seen.hasOwnProperty(item) && seen[item] > 1) {
-        dupes.push(+item);
+    // Using array reduce()
+    return arr.reduce(function(dupes, val, i) {
+      if(arr.indexOf(val) !== i && dupes.indexOf(val) === -1) {
+        dupes.push(val);
       }
-    }
+      return dupes;
+    }, []);
 
-    return dupes;
+    // CONVENTIONAL WAY
+    //var seen = {};
+    //var dupes = [];
+    //
+    //for (var i = 0; i < arr.length; i++) {
+    //  seen[arr[i]] = seen[arr[i]] ? seen[arr[i]] + 1 : 1;
+    //}
+    //
+    //for (var item in seen) {
+    //  if (seen.hasOwnProperty(item) && seen[item] > 1) {
+    //    dupes.push(+item);
+    //  }
+    //}
+    //
+    //return dupes;
   },
 
   square : function(arr) {
