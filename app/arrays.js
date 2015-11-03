@@ -137,6 +137,7 @@ exports.arraysAnswers = {
     return ret;
 
     //// Using a WHILE loop and indexOf()
+    ////
     //var indexes = [];
     //var i = -1;
     //// The .indexOf() method has an optional second parameter that specifies the index to start searching from,
@@ -145,5 +146,13 @@ exports.arraysAnswers = {
     //  indexes.push(i);
     //}
     //return indexes;
+
+    //// Using Array reduce()
+    //return arr.reduce(function(ret, val, index) {
+    //    if(arr[index] === target) {
+    //      ret.push(index);
+    //    }
+    //    return ret;
+    //}, []);
   }
 };
