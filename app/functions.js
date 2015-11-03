@@ -28,6 +28,8 @@ exports.functionsAnswers = {
     for (var i = 0; i < arr.length; i++) {
       ret.push(makeFn(arr[i]));
     }
+
+    return ret;
   },
 
   partial: function (fn, str1, str2) {
