@@ -127,6 +127,7 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences: function (arr, target) {
+    // CONVENTIONAL WAY
     var ret = [];
     for (var i = 0; i < arr.length; i++) {
       if (arr[i] === target) {
@@ -134,5 +135,15 @@ exports.arraysAnswers = {
       }
     }
     return ret;
+
+    //// Using a WHILE loop and indexOf()
+    //var indexes = [];
+    //var i = -1;
+    //// The .indexOf() method has an optional second parameter that specifies the index to start searching from,
+    //// so you can call it in a loop to find all instances of a particular value
+    //while ((i = arr.indexOf(target, i+1)) !== -1){
+    //  indexes.push(i);
+    //}
+    //return indexes;
   }
 };
