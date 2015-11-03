@@ -2,8 +2,8 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.arraysAnswers = {
 
-  indexOf : function(arr, item) {
-    if(Array.prototype.indexOf) {
+  indexOf: function (arr, item) {
+    if (Array.prototype.indexOf) {
       return arr.indexOf(item);
     } else {
       for (var i = 0; i < arr.length; i++) {
@@ -15,26 +15,26 @@ exports.arraysAnswers = {
     }
   },
 
-  sum : function(arr) {
+  sum: function (arr) {
     var sum = 0;
-    for(var i=0; i< arr.length; i++) {
-      sum +=arr[i];
+    for (var i = 0; i < arr.length; i++) {
+      sum += arr[i];
     }
     return sum;
   },
 
-  remove : function(arr, item) {
+  remove: function (arr, item) {
     // Returns a NEW ARRAY
-    return arr.filter(function(val) {
+    return arr.filter(function (val) {
       return val !== item;
     });
   },
 
-  removeWithoutCopy : function(arr, item) {
+  removeWithoutCopy: function (arr, item) {
     // Modifies the ORIGINAL array.
     // If it is ok to use a new result array, use filter() then.
-    for(var i = 0; i < arr.length; i++) {
-      if(arr[i] === item) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
         // The splice() method changes the content of an array by removing existing elements and/or adding new elements.
         arr.splice(i, 1);
         i--; // move index pointer back to removed item index.
@@ -43,39 +43,39 @@ exports.arraysAnswers = {
     return arr;
   },
 
-  append : function(arr, item) {
+  append: function (arr, item) {
     arr.push(item);
     return arr;
   },
 
-  truncate : function(arr) {
+  truncate: function (arr) {
     arr.pop();
     return arr;
   },
 
-  prepend : function(arr, item) {
+  prepend: function (arr, item) {
     arr.unshift(item);
     return arr;
   },
 
-  curtail : function(arr) {
+  curtail: function (arr) {
     arr.shift();
     return arr;
   },
 
-  concat : function(arr1, arr2) {
+  concat: function (arr1, arr2) {
     return arr1.concat(arr2);
   },
 
-  insert : function(arr, item, index) {
+  insert: function (arr, item, index) {
     // The splice() method changes the content of an array by removing existing elements and/or adding new elements.
     arr.splice(index, 0, item);
     return arr;
   },
 
-  count : function(arr, item) {
+  count: function (arr, item) {
     // Using reduce()
-    return arr.reduce(function(n, val) {
+    return arr.reduce(function (n, val) {
       return n + (val === item);  // Coercion converts 'true' to 1
     }, 0);
 
@@ -92,10 +92,10 @@ exports.arraysAnswers = {
     //return count;
   },
 
-  duplicates : function(arr) {
+  duplicates: function (arr) {
     // Using array reduce()
-    return arr.reduce(function(dupes, val, i) {
-      if(arr.indexOf(val) !== i && dupes.indexOf(val) === -1) {
+    return arr.reduce(function (dupes, val, i) {
+      if (arr.indexOf(val) !== i && dupes.indexOf(val) === -1) {
         dupes.push(val);
       }
       return dupes;
@@ -118,7 +118,7 @@ exports.arraysAnswers = {
     //return dupes;
   },
 
-  square : function(arr) {
+  square: function (arr) {
     // Modifies the current array
     for (var i = 0; i < arr.length; i++) {
       arr[i] = arr[i] * arr[i];
@@ -126,7 +126,13 @@ exports.arraysAnswers = {
     return arr;
   },
 
-  findAllOccurrences : function(arr, target) {
-
+  findAllOccurrences: function (arr, target) {
+    var ret = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        ret.push(i);
+      }
+    }
+    return ret;
   }
 };
