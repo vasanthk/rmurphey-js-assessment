@@ -62,6 +62,7 @@ exports.functionsAnswers = {
     };
   },
 
+  // Currying: https://medium.com/@kevincennis/currying-in-javascript-c66080543528
   curryIt: function (fn) {
 
   }
