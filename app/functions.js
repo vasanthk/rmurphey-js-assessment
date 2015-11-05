@@ -63,7 +63,27 @@ exports.functionsAnswers = {
   },
 
   // Currying: https://medium.com/@kevincennis/currying-in-javascript-c66080543528
+  // Currying refers to the process of taking a function with n arguments and transforming it into n functions that each take a single argument.
+  // It essentially creates a chain of partially applied functions that eventually resolves with a value.
   curryIt: function (fn) {
+    function applyArguments(fn, arguments) {
+      return fn.apply(null, arguments);
+    }
 
+    function getArgumentAccumulator(accumulatedArguments, expectedArgumentsCount) {
+      return function (currentArgument) {
+        accumulatedArguments.push(currentArgument);
+
+        var allArgumentsProvided = accumulatedArguments.length === expectedArgumentsCount;
+
+        if (allArgumentsProvided) {
+          return applyArguments(fn, accumulatedArguments);
+        } else {
+          return getArgumentAccumulator(accumulatedArguments, expectedArgumentsCount);
+        }
+      };
+    }
+
+    return getArgumentAccumulator([], fn.length);
   }
 };
