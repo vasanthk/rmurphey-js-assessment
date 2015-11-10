@@ -73,8 +73,19 @@ exports.recursionAnswers = {
     }
   },
 
+  // For more check https://medium.com/@scottibiscotti1/calculating-the-nth-fibonacci-number-in-javascript-c3656250f626
+  // TODO: CHekc if this can be simplified.
   fibonacci: function (n) {
-
+    // Naive rerursive approach
+    var fib = function(n) {
+      var result = 0;
+      if (n <= 2) {
+        return n - 1;
+      }
+      result = fib(n - 1) + fib(n - 2);
+      return result;
+    };
+    return fib(n);
   },
 
   validParentheses: function (n) {

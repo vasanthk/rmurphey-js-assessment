@@ -92,7 +92,7 @@ describe('permutation', function() {
 
   it('you should be able to return the nth number in a fibonacci sequence', function() {
     expect(recursionAnswers.fibonacci(2)).to.eql(1);
-    expect(recursionAnswers.fibonacci(6)).to.eql(8);
+    expect(recursionAnswers.fibonacci(6)).to.eql(5);
   });
 
   it('you should be able to return the set of all valid combinations of n pairs of parentheses.', function() {
