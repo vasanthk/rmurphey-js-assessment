@@ -77,31 +77,29 @@ exports.recursionAnswers = {
   // TODO: Check if this can be simplified.
   fibonacci: function (n) {
     // Naive rerursive approach
-    function fib(n) {
-      return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+    if (n <= 0) {
+      return 0;
     }
-
-    return fib(n)
+    if (n === 1 || n === 2) {
+      return 1;
+    }
+    return this.fibonacci(n - 1) + this.fibonacci(n - 2);
   },
 
   validParentheses: function (n) {
-    function nPair(n) {
-      if (n == 0)
-        return [""];
-
-      var result = [];
-      for (var i = 0; i < n; ++i) {
-        var lefts = nPair(i);
-        var rights = nPair(n - i - 1);
-
-        for (var l = 0; l < lefts.length; ++l)
-          for (var r = 0; r < rights.length; ++r)
-            result.push("(" + lefts[l] + ")" + rights[r]);
+    var sets = [];
+    var getParen = function (left, right, current) {
+      if (left == 0 && right == 0) {
+        sets.push(current);
       }
-
-      return result;
-    }
-
-    return nPair(n);
+      if (left > 0) {
+        getParen(left - 1, right + 1, current + '(');
+      }
+      if (right > 0) {
+        getParen(left, right - 1, current + ')');
+      }
+      return sets;
+    };
+    return getParen(n, 0, '');
   }
 };
