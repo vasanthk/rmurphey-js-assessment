@@ -14,7 +14,7 @@ exports.stringsAnswers = {
         count++;
         newStr.push(elem);
       }
-    })
+    });
     return newStr.join('')
   },
   wordWrap: function (str, cols) {
