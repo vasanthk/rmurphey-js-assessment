@@ -2,7 +2,20 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.stringsAnswers = {
   reduceString: function (str, amount) {
-
+    var strArr = str.split('');
+    var newStr = [];
+    var check = '', count = 0;
+    strArr.forEach(function (elem) {
+      if (elem != check) {
+        check = elem;
+        count = 1;
+        newStr.push(elem);
+      } else if (count < amount) {
+        count++;
+        newStr.push(elem);
+      }
+    })
+    return newStr.join('')
   },
   wordWrap: function (str, cols) {
     var strArr = str.split('');
