@@ -92,6 +92,7 @@ describe('permutation', function() {
 
   it('you should be able to return the nth number in a fibonacci sequence', function() {
     expect(recursionAnswers.fibonacci(2)).to.eql(1);
+    // TODO: The exoect() below is wrong fibonacci(6)) should equal 5. Send a PR to Rebecca Murphey's Repo
     expect(recursionAnswers.fibonacci(6)).to.eql(8);
   });
 
