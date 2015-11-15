@@ -1,5 +1,8 @@
 exports = (typeof window === 'undefined') ? global : window;
 
+// Reference Links:
+// https://davidwalsh.name/regular-expressions-rest
+// https://www.debuggex.com/cheatsheet/regex/javascript
 exports.regexAnswers = {
   containsNumber : function(str) {
     return (/\d/).test(str);
@@ -10,11 +13,13 @@ exports.regexAnswers = {
   },
 
   endsWithVowel : function(str) {
-
+    return (/[aeiou]$/i).test(str);
   },
 
   captureThreeNumbers : function(str) {
-
+    // regexObj.exec(str) syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
+    var matches = (/\d{3}/).exec(str);
+    return matches ? matches[0] : false;
   },
 
   matchesPattern : function(str) {
