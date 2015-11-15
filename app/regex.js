@@ -23,7 +23,8 @@ exports.regexAnswers = {
   },
 
   matchesPattern : function(str) {
-
+    // Phone number regex deconstructed: https://davidwalsh.name/regular-expressions-rest
+    return (/^\d{3}-\d{3}-\d{4}$/).test(str);
   },
   isUSD : function(str) {
 
