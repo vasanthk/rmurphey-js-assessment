@@ -3,6 +3,7 @@ exports = (typeof window === 'undefined') ? global : window;
 // Reference Links:
 // https://davidwalsh.name/regular-expressions-rest
 // https://www.debuggex.com/cheatsheet/regex/javascript
+// https://www.youtube.com/watch?v=EkluES9Rvak
 exports.regexAnswers = {
   containsNumber : function(str) {
     return (/\d/).test(str);
