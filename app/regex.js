@@ -26,7 +26,8 @@ exports.regexAnswers = {
     // Phone number regex deconstructed: https://davidwalsh.name/regular-expressions-rest
     return (/^\d{3}-\d{3}-\d{4}$/).test(str);
   },
-  isUSD : function(str) {
 
+  isUSD : function(str) {
+    return (/^\$\d{1,3}(,\d{3})*(\.\d{2})?$/).test(str);
   }
 };
